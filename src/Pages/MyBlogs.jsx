@@ -1,17 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Blog from "./Blog";
+import { useNavigate } from "react-router-dom";
 
 const MyBlogs = () => {
   const userId = localStorage.getItem("user-data");
   const [user, setUser] = useState();
+  const [iszero, setiszero] = useState();
+  const navigate = useNavigate();
   const BlogUrl = process.env.REACT_APP_API_KEY_BLOG;
   const sendRequest = async () => {
     const res = await axios
       .get(`${BlogUrl}user/${userId}`)
       .catch((err) => console.log(err));
     const data = await res.data;
-    console.log(data.user.blogs);
+    if (data.user.blogs.length == 0) {
+      setiszero(true);
+      alert("You haven't upload ant Blog yet add your first blog ");
+      navigate("/addblog");
+    }
+
     return data;
   };
   const deleteBlog = async (blogId) => {
