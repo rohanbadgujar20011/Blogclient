@@ -95,7 +95,7 @@ const SingleBlog = () => {
           <hr />
           <br />
           <Typography variant="body2" color="text.secondary">
-            <b>{user}</b> {": "} {desc}
+            {desc}
           </Typography>
         </CardContent>
       </Card>

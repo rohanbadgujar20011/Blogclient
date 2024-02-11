@@ -95,7 +95,7 @@ const Signup = () => {
                     className="w-100 mt-2"
                     type="submit"
                   >
-                    Sign Up
+                    {loading ? "Waiting..." : "Signup in"}
                   </Button>
                 </Form>
               </Card.Body>

@@ -54,13 +54,17 @@ const Blog = ({ title, desc, img, userid, isUser, id, onDelete }) => {
       {" "}
       <Card
         sx={{
-          width: "40%",
+          width: "100%",
           margin: "auto",
           mt: 2,
           padding: 2,
           boxShadow: "5px 5px 10px #ccc",
           ":hover": {
             boxShadow: "10px 10px 20px #ccc",
+          },
+          "@media (min-width: 768px)": {
+            // Media query for larger screens (tablet and above)
+            width: "40%", // Adjusted width for larger screens
           },
         }}
       >

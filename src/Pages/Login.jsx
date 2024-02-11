@@ -2,6 +2,7 @@ import { React, useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import axios from "axios";
+import ReactLoading from "react-loading";
 import { useDispatch } from "react-redux";
 import { authActions } from "../store/index";
 const Login = () => {
@@ -67,12 +68,13 @@ const Login = () => {
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </Form.Group>
+                  {}
                   <Button
                     disabled={loading}
                     className="w-100 mt-2"
                     type="submit"
                   >
-                    Log In
+                    {loading ? "Waiting..." : "Log in"}
                   </Button>
                 </Form>
               </Card.Body>
