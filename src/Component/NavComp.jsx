@@ -7,11 +7,12 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { authActions } from "../store";
 import { useDispatch, useSelector } from "react-redux";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import DropdownButton from "./DropdownButton ";
+import { Avatar } from "@mui/material";
 const NavComp = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  console.log("is user login" + isLoggedIn);
+
   const [value, setValue] = useState();
   const navigate = useNavigate();
 
@@ -41,16 +42,7 @@ const NavComp = () => {
                 <Nav.Link href="/">All Blogs</Nav.Link>
                 <Nav.Link href="/myblogs">My Blogs</Nav.Link>
                 <Nav.Link href="/addblog">Add Blog</Nav.Link>
-                {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown> */}
+
                 {/* <Nav.Link href="#" disabled>
                   Link
                 </Nav.Link> */}
@@ -80,9 +72,11 @@ const NavComp = () => {
 
               {isLoggedIn && (
                 <>
-                  <Button variant="outline-success" onClick={handlelogout}>
+                  <DropdownButton />
+                  <div></div>
+                  {/* <Button variant="outline-success" onClick={handlelogout}>
                     Logout
-                  </Button>
+                  </Button> */}
                 </>
               )}
             </Form>
