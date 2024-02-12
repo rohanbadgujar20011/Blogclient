@@ -74,9 +74,7 @@ const NavComp = () => {
                 <>
                   <DropdownButton />
                   <div></div>
-                  {/* <Button variant="outline-success" onClick={handlelogout}>
-                    Logout
-                  </Button> */}
+                  
                 </>
               )}
             </Form>
